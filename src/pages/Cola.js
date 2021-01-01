@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export const Cola = () => {
-    return (
-        <div>
-            Cola Page
-        </div>
-    )
-}
+  return <div>Cola Page</div>;
+};
