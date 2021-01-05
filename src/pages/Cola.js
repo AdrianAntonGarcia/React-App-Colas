@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Row, Col, Typography, List, Card, Tag, Divider } from 'antd';
 import { useHideMenu } from '../hooks/useHideMenu';
 import { SocketContex } from '../context/SocketContext';
+import { getUltimos } from '../helpers/getUltimos';
 
 const { Title, Text } = Typography;
 
@@ -20,6 +21,11 @@ export const Cola = () => {
       socket.off('ticket-asignado');
     };
   }, [socket]);
+
+  /**No puede ser async */
+  useEffect(() => {
+    getUltimos().then((tickets) => setTickets(tickets));
+  }, []);
 
   return (
     <>
