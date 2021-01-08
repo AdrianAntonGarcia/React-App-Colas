@@ -13,7 +13,7 @@ export const Cola = () => {
   const [tickets, setTickets] = useState([]);
 
   useEffect(() => {
-    socket.on('ticket-asignado', (asignados) => {
+    socket.on('ticket-asignado', (asignados: React.SetStateAction<never[]>) => {
       console.log(asignados);
       setTickets(asignados);
     });
@@ -34,7 +34,7 @@ export const Cola = () => {
         <Col span={12}>
           <List
             dataSource={tickets.slice(0, 3)}
-            renderItem={(item) => (
+            renderItem={(item: any) => (
               <List.Item>
                 <Card
                   style={{ width: 300, marginTop: 16 }}
@@ -53,7 +53,7 @@ export const Cola = () => {
           <Divider>Historial</Divider>
           <List
             dataSource={tickets.slice(3)}
-            renderItem={(item) => (
+            renderItem={(item: any) => (
               <List.Item>
                 <List.Item.Meta
                   title={`Ticket No. ${item.numero}`}

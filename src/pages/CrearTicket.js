@@ -11,7 +11,7 @@ export const CrearTicket = () => {
 
   const { socket } = useContext(SocketContex);
 
-  const [ticket, setTicket] = useState(null);
+  const [ticket, setTicket] = useState({});
 
   const nuevoTicket = () => {
     /** El tercer argumento es un código que se ejecuta cuándo el backend quiera,
